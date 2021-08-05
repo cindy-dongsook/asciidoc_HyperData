@@ -1,0 +1,59 @@
+////
+ ---------------------
+ section level-1 ===
+ ---------------------
+////
+[#sect_analytics_ml_predefined]
+=== Predefined 
+
+분석 > [Predefined AI] 메뉴를 선택하면 사전 정의된 모델들을 바탕으로 등록된 서비스를 다양하게 제공한다. 제공되는 서비스는 모델 선택,데이터 선택 과정으로 진행된다.
+
+////
+ ---------------------
+ section level-2 ====
+ ---------------------
+////
+==== 모델 선택 
+
+모델 선택단계에서는 HyperData의 사전 정의된 모델 목록을 조회한다.
+
+사전에 정의된 모델은 다양한 서비스 형태로 조회되며, 사용자는 각 서비스를 대표하는 제목과 상세 설명을 통해 목적에 맞는 모델을 선택한다.
+
+사용자는 [학습 시작하기] 버튼을 클릭하여 모델을 제공 받거나, [더 알아보기] 버튼을 클릭하여 각 모델의 보다 더 자세한 설명 내역을 확인할 수 있다. 현재 [더 알아보기] 버튼은 미지원 상태이며, 다음 버전에 추가될 예정이다.
+
+[#figure_predefinedai_selection]
+image::resources/figure_predefinedai_selection.png[title="모델 선택단계", width=750]
+
+
+////
+ ---------------------
+ section level-2 ====
+ ---------------------
+////
+==== 데이터 선택
+
+<<figure_predefinedai_selection,모델 선택단계 >>에서 [학습 시작하기] 버튼을 클릭하면 데이터 선택단계로 이동한다.
+
+데이터 선택단계는 데이터 형식 확인,데이터 오브젝트 선택,선택한 데이터 확인의 3단계로 진행된다. image:resources/icon_back.png[ width=20] 아이콘을 클릭하면 이전 단계인 <<figure_predefinedai_selection, 모델 선택단계>>로 이동한다.
+
+1.  데이터 형식 확인
++
+사용자가 서비스를 제공받기 위해서 필수적으로 갖추어야 할 데이터의 형식을 보여준다. 사용자는 해당 데이터 형식에 맞추어 자신의 데이터를 수정하고, HyperData의 데이터 <<figure_data_datasource, Data Source 화면>>의 목록에 데이터를 등록한다. 데이터가 준비되어져 있는 상태라면 서비스를 수행하기 위해 [다음] 버튼을 클릭한다.
++
+image::resources/figure_predefinedai_datacontext.png[title="[Predefined AI] - 데이터 선택단계 (1)",width=750]
+2.  데이터 오브젝트 선택
++
+HyperData의 데이터 오브젝트 목록 중 데이터 형식 확인단계에서 확인한 데이터 형식과 같은 형식의 데이터를 목록에 출력한다. 사용자는 출력된 데이터 오브젝트 목록 중 원하는 데이터 목록을 체크박스를 통해 선택하고, [다음] 버튼을 클릭한다. 이때 선택할 수 있는 체크박스의 수는 1개로 고정되어 있다. 원하는 데이터가 목록에 출력되지 않을 경우 [이전] 버튼을 클릭해서 데이터 형식을 확인하고, HyperData의 데이터 Data Source 화면<<figure_data_datasource, Data Source 화면>>의 목록에서 본인이 등록한 데이터의 형태를 확인한다.
++
+image::resources/figure_predefinedai_dataconfirm.png[title="[Predefined AI] - 데이터 선택단계 (2)",width=750]
+3.  선택한 데이터 확인
++
+데이터 오브젝트 선택단계에서 선택한 데이터 오브젝트의 데이터 형태를 확인할 수 있다.
++
+조회된 데이터 형태가 본인이 원하던 데이터가 맞는지 확인한 후 [학습시작] 버튼을 클릭하면 사전 정의된 모델을 바탕으로 선택한 데이터에 대해 분석이 수행된다. [이전] 버튼을 클릭하면 데이터 오브젝트 선택단계로 이동한다.
++
+image::resources/figure_predefinedai_dataconcrete.png[title="[Predefined AI] - 데이터 선택단계 (3)",width=750]
++
+데이터 분석 완료 후 [목록으로 돌아가기] 버튼을 클릭하면 <<figure_automl_experiment,Experiments 목록 화면>>에서 사용자 실험 결과 확인할 수 있다.
++
+image::resources/figure_predefinedai_complete.png[title="[Predefined AI] - 데이터 선택단계 (4)",width=750]

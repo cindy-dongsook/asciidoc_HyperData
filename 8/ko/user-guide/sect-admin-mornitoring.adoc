@@ -1,0 +1,12 @@
+////
+ ---------------------
+ section level-1 ===
+ ---------------------
+////
+[#sect_admin_mornitoring]
+=== Realtime Monitoring
+
+
+*[시스템 관리] > [System Monitoring]* 메뉴를 선택하면 RealTime Monitoring 화면에서 HyperData 내 작업 수행 중인 시스템 상황을 실시간으로 조회하고 설정할 수 있다(모니터링 타겟을 변경하고 커스터마이징하는 편집 기능은 추후 추가 예정).
+
+image::resources/figure_system_monitoring_dashboard.png[title="RealTime Monitoring 화면", width=750]

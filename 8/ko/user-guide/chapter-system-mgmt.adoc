@@ -1,0 +1,34 @@
+////
+ chapter ==
+////
+== 시스템 관리
+
+
+본 장에서는 HyperData Web UI의 시스템 관리 카테고리 하위 각 메뉴의 사용법에 대해서 설명한다.
+
+////
+ section level-2 ====
+////
+=== 개요
+
+
+시스템 관리 카테고리에서는 관리자의 주요 작업을 하는 메뉴를 선택할 수 있다. 해당 카테고리는 로그인된 사용자가 Administrator 권한(((Administrator 권한)))인 경우에만 생성된다.
+
+다음은 시스템 관리 카테고리의 하위 메뉴에 대한 설명이다.
+
+[width="100%",cols="3,7",options="header"]
+|=================================================
+|메뉴               |설명
+|<<sect_admin_users,Users>>   |사용자를 등록, 수정, 삭제한다.
+|<<sect_admin_user_groups,User Groups>> |사용자 그룹을 등록, 수정, 삭제한다.
+|<<sect_admin_proj, Project Management>>|사용자가 생성한 프로젝트 목록을 조회하고 생성, 수정, 삭제한다.
+|<<sect_admin_mornitoring,System Monitoring>>|HyperData 내 작업 수행 중 시스템 상황을 실시간으로 조회한다.
+|<<sect_admin_auditlog,Audit Log>>      |HyperData 내 수행된 action 기록을 남기며, 관리자가 조회한다.
+|=================================================
+
+include::sect-admin-users.adoc[]
+include::sect-admin-user-groups.adoc[]
+include::sect-admin-proj.adoc[]
+include::sect-admin-mornitoring.adoc[]
+include::sect-admin-auditlog.adoc[]
+

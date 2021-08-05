@@ -1,0 +1,34 @@
+= HyperData 설치안내서
+HyperData 8 
+:doctype: book
+:encoding: utf-8
+:lang: ko-kr
+:toc: left
+:toclevels: 2
+:numbered:
+
+////
+Change Book Name, Author's Name and Language for your need.
+
+This is a comment block, you can remove it.
+////
+
+////
+Organize your book chapter by chapter
+////
+
+
+include::./common/bookinfo.adoc[]
+
+include::about-this-document.adoc[]
+
+include::chapter-1.adoc[]
+
+include::chapter-2.adoc[]
+
+////
+include::index.adoc[]
+////
+
+
+ 

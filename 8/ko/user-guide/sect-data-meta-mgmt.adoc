@@ -1,0 +1,332 @@
+////
+---------------------
+ section level-1 ===
+---------------------
+////
+[#sect_data_meta_mgmt]
+===  Meta Management
+
+[데이터] > [Meta Management] 메뉴를 선택하면 프로젝트 내 등록된 데이터 객체와 컬럼에 대한 메타 데이터를 관리할 수 있다.
+
+메타데이터 관리 화면은 [비지니스 룰], [카테고리 관리], [컬럼값 관리], [사전] 탭을 선택해서 비지니스룰, 카테고리와 컬럼값을 관리하고 데이터의 정보를 정의할 사전을 관리할 수 있다.
+ 
+[#figure_meta_mgmt]
+image::resources/figure_business_rule.png[title="비지니스 룰 초기 화면",width=750]
+
+
+
+////
+---------------------
+ section level-2 ====
+---------------------
+////
+[#sect_meta_business_rule]
+==== 비지니스 룰 관리
+
+<<figure_meta_mgmt, 메타데이터 관리 화면>>의 [비지니스 룰] 탭을 선택하면 비지니스 로직을 위한 룰(rule)을 정의하고 관리할 수 있다.
+
+
+////
+---------------------
+ section level-3 =====
+---------------------
+////
+[#sect_meta_business_rule_create]
+===== 비지니스 룰 생성
+
+<<figure_meta_mgmt, 비지니스 룰 기본 화면>>에서 [+ 비지니스룰] 버튼을 클릭하면 새로운 비지니스 룰을 생성할 수 있으며, 비지니스 룰 생성 화면에서는 기본정보와 룰을 설정 할 수 있다.
+
+[#figure_business_create]
+image::resources/figure_business_create.png[title="비지니스 룰 생성 화면",width=750]
+
+* 비지니스 룰 기본정보
++
+비지니스 룰 기본 정보로는 이름, 관계 타입, 설명이 있다.
+* 비지니스 룰 설정
++
+일반화 룰(Generalization rule)을 정의할 수 있으며, 설정 항목의 [수정] 버튼을 클릭하면 일반화 룰을 생성할 수 있다. 자세한 내용은 <<sect_generalization_rule,"일반화 룰 정의">>를 참고한다.
+
+*일반화 룰 정의*
+
+일반화 룰을 정의하기 위해서는 일반화 타입을 선택해야하며, 일반화 타입으로는 값 지정 타입과 구간 지정 타입이 있다. 일반화는 기본적으로 분류 구조 관리를 목적으로 하며, 값 지정 타입은 값이 포함되는 개념과 값에 관한 상하 구조를 설정하고 구간 지정 타입은 숫자형 데이터에 대하여 범위를 설정하는 룰이다.
+ 
+[#figure_business_rule_generalization_setting]
+image::resources/figure_business_rule_generalization_setting.png[title="비지니스 룰 - 일반화 생성 화면",width=750]
+
+* 값/개념 설정
++
+분류할 값과 개념의 추가는 <<figure_business_rule_generalization, 일반화 생성 화면>>의 [불러오기] 또는 [추가] 버튼을 클릭한다. 
++
+** 불러오기
++
+해당 버튼을 통해 컬럼의 Candidates를 값이나 개념으로 불러올 수 있다. 특정 컬럼에 대하여 Candidates가 존재하지 않는다면 [컬럼값 관리] 탭에서 생성이 가능하며, 자세한 내용은 <<sect_meta_column, "컬럼값 관리">>를 참고한다.
++
+[불러오기] 버튼을 클릭하면 Candidates를 불러올 데이터 객체와 해당 데이터 객체의 컬럼을 선택할 수 있다. 선택을 완료한 후 [적용] 버튼을 클릭하면 [불러오기] 버튼이 클릭된 리스트에서 선택한 컬럼의 Candidates를 확인할 수 있다.
++
+image::resources/figure_business_generalization_import.png[title="비지니스 룰 - 일반화 값/개념 불러오기",width=400]
++
+** 추가
++
+해당 버튼을 통해 직접 값이나 개념을 입력할 수 있다. [추가] 버튼을 클릭하면 새로 생성할 값/개념을 입력할 수 있는 다이얼로그가 나타난다. 원하는 값/개념을 입력하고 [적용] 버튼을 클릭하면 입력한 값/개념을 [추가] 버튼이 클릭된 리스트에서 확인할 수 있다.
++
+image::resources/figure_business_generalization_add.png[title="비지니스 룰 - 일반화 값/개념 추가오기",width=400]
++
+일반화 타입이 구간 지정이라면 [추가] 버튼을 클릭할 경우 구간을 입력할 수 있는 다이얼로그가 나타난다. 원하는 구간을 입력하고 [적용]버튼을 클릭하면 입력한 구간을 값 리스트에서 확인할 수 있다.
++
+** 삭제
++
+해당 버튼을 통해 값이나 개념을 삭제할 수 있다. <<figure_business_rule_generalization, 일반화 생성 화면>>에서 값/개념 리스트에서 삭제할 요소를 선택하여 해당 버튼을 클릭하면 선택된 개념/값에 대하여 삭제가 실행된다.
++
+* 값/개념 선택
++
+값/개념을 추가한 리스트에서 룰을 생성할 값/개념을 선택할 수 있다. 일반화 타입이 값 지정이라면 여러개의 값을 선택하여 개념에 포함시킬 수 있다.
++
+image::resources/figure_business_generalization_value_type.png[title="비지니스 룰 - 값/개념 선택",width=750]
++
+일반화 타입이 구간 지정이라면 값 리스트에서 하나의 구간을 선택하여 개념에 포함시킬 수 있다.
++
+image::resources/figure_business_generalization_range_type.png[title="비지니스 룰 - 구간 선택",width=750]
+* 일반화 룰 생성
++
+값/개념 리스트에서 룰을 생성할 요소를 선택하여 [▶] 버튼을 클릭하면 선택한 값/개념이 적용되어 생성될 룰의 요약이 보여진다.
++
+image::resources/figure_business_generalization_summary.png[title="비지니스 룰 - 룰 요약 (값 지정 타입)",width=350]
++
+일반화 타입이 구간 지정이라면 한 범주당 하나의 개념을 포함한 요약을 확인할 수 있다.
++
+image::resources/figure_business_generalization_summary_range.png[title="비지니스 룰 - 룰 요약 (구간 지정 타입)",width=350]
++
+룰 요약을 확인 후 <<figure_business_rule_generalization, 일반화 생성 화면>>의 [적용] 버튼을 클릭하면 일반화룰이 생성된다.
++
+일반화 생성화면의 설정 항목에서 생성한 일반화 룰을 확인할 수 있다. <<figure_business_generalization_preview, 일반화 설정>>에서 체크박스를 통해 일반화 룰을 선택하고 [삭제] 버튼을 클릭하면 삭제를 할 수 있다.
++
+일반화 룰과 기본 정보를 작성하거나 수정했다면 <<figure_business_create, 비지니스룰 생성화면>>에 [저장] 버튼을 클릭한다.
++
+image::resources/figure_business_generalization_preview.png[title="비지니스 룰 - 일반화 룰 생성",width=750]
+
+////
+ ---------------------
+ section level-3 =====
+ --------------------- 
+////
+[#sect_meta_business_rule_edit]
+=====  비지니스 룰 수정
+
+<<figure_meta_mgmt, 비지니스 룰 조회 화면>>에서 수정할 룰을 체크박스를 통해 선택하고 수정 버튼을 클릭하거나 수정할 룰을 더블클릭하면 비지니스룰을 수정할 수 있다. 항목 설정에 대한 자세한 내용은 <<sect_meta_business_rule_create,"비지니스 룰 생성">>을 참고한다.
+
+image::resources/figure_business_edit.png[title="비지니스 룰 - 룰 수정",width=750]
+
+////
+---------------------
+ section level-3 =====
+--------------------- 
+////
+[#sect_meta_business_rule_remove]
+=====  비지니스 룰 삭제 
+
+<<figure_meta_mgmt,비지니스 룰 조회 화면>>에서 삭제할 룰을 체크박스를 통해 선택하고 삭제 버튼을 클릭하면 여러 개의 비지니스 룰을 삭제할 수 있다. 삭제 화면에서 목록을 확인 한 후 삭제 버튼을 클릭한다.
+
+image::resources/figure_business_create_delete.png[title="비지니스 룰 - 룰 삭제",width=350]
+
+////
+---------------------
+ section level-2 ====
+--------------------- 
+////
+[#sect_meta_category]
+==== 카테고리 관리
+
+<<figure_meta_mgmt,메타데이터 관리 화면>>의 [카테고리 관리] 탭을 선택하면 데이터 객체와 컬럼에 대한 논리적인 집합인 카테고리(category)를 정의하고 관리할 수 있다.
+
+등록된 카테고리가 없는 경우 <<figure_meta_mgmt_category,카테고리 관리 초기 화면>>의 중앙에 [카테고리 생성] 버튼이나 [+카테고리] 버튼을 클릭해서 카테고리를 등록한다.
+ 
+[#figure_meta_mgmt_category]
+image::resources/figure_meta_mgmt.png[title="카테고리 관리 초기 화면",width=750]
+
+등록된 카테고리로 트리를 구성하고 '검색' 항목을 입력하면 트리에서 입력한 값으로 조회된다. 트리에서 카테고리를 선택하면 해당 상세 정보를 조회하고 수정, 삭제할 수 있다. 목록 아래에 조회된 건수와 페이징 정보, 조회할 건수를 선택할 수 있다.
+
+ 
+[#figure_meta_category_select]
+image::resources/figure_meta_category_select.png[title="카테고리 조회 화면",width=750]
+
+카테고리 조회 화면 트리에서 카테고리를 선택한 후 다음과 같이 드래그 앤 드롭을 하면 등록된 카테고리들간의 포함 관계를 지정할 수 있다.
+
+image::resources/figure_meta_category_treeupdate.png[title="카테고리 수정 - 카테고리 간 관계 설정 화면",width=350]
+
+////
+ ---------------------
+ section level-3 =====
+ ---------------------
+////
+[#sect_meta_category_create]
+=====  카테고리 생성
+
+등록된 카테고리가 없는 경우 <<figure_meta_mgmt_category,카테고리 관리 초기 화면>>의 [카테고리 생성] 버튼이나 <<figure_meta_category_select,카테고리 조회 화면>>의 [+카테고리] 버튼을 클릭하면 카테고리를 등록할 수 있다.
+
+카테고리 생성 화면의 [+항목 추가] 버튼을 클릭하면 카테고리에 묶을 항목들을 지정할 수 있다(<<figure_meta_category_item, "그림 4.45. 카테고리 생성 - 항목 등록">> 참고). 추가된 항목은 [항목 삭제] 버튼을 클릭해서 삭제할 수 있다. 카테고리 정보를 설정하고 [저장] 버튼을 클릭한다.
+
+image::resources/figure_meta_category_create.png[title="카테고리 수정 - 카테고리 간 관계 설정 화면",width=600]
+
+*항목 등록*
+
+항목 등록 화면의 왼쪽 항목 영역에 현재 프로젝트 내 등록된 데이터 객체와 컬럼이 조회된다.
+
+항목 영역에서 지정할 항목을 선택한 후 **[항목 업데이트>>]** 버튼을 클릭하면 해당 항목들이 오른쪽의 카테고리 구성항목 영역으로 이동하며 설정할 카테고리 항목으로 된다. 카테고리 구성항목 영역에서 삭제할 항목을 선택한 후 **[<<항목 삭제]** 버튼을 클릭하면 설정할 항목 리스트에서 삭제된다.
+
+설정이 완료되면 [적용] 버튼을 클릭한다.
+ 
+[#figure_meta_category_item]
+image::resources/figure_meta_category_item.png[title="카테고리 생성 - 항목 등록",width=550]
+
+
+////
+ ---------------------
+ section level-3 =====
+ ---------------------
+////
+[#sect_meta_category_edit]
+=====  카테고리 수정
+
+<<figure_meta_mgmt_category, 카테고리 조회 화면>>의 [수정] 버튼을 클릭하면 카테고리를 수정할 수 있다. 카테고리 정보를 수정한 후 [저장] 버튼을 클릭한다. 항목 설정에 대한 자세한 내용은 <<sect_meta_category_create, "4.3.2.1. 카테고리 생성">>을 참고한다.
+
+image::resources/figure_meta_category_edit.png[title="카테고리 수정",width=660]
+
+////
+ ---------------------
+ section level-3  =====
+ ---------------------
+////
+[#sect_meta_category_delete]
+===== 카테고리 삭제
+ 
+<<figure_meta_mgmt_category, 카테고리 조회 화면>>의 카테고리 트리에서 카테고리의 체크박스를 선택한 후 [삭제] 버튼을 클릭하면 여러 개의 카테고리를 삭제할 수 있고, 하위에 있는 카테고리도 함께 삭제할 수 있다.
+
+카테고리 상세조회 후 [삭제] 버튼을 클릭하면 해당 카테고리를 삭제할 수 있다. 삭제 화면에서 목록을 확인한 후 [삭제] 버튼을 클릭한다.
+
+image::resources/figure_meta_category_delete.png[title="카테고리 삭제",width=300]
+
+////
+ ---------------------
+ section level-2 ====
+ ---------------------
+////
+[#sect_meta_column]
+==== 컬럼값 관리
+
+<<figure_meta_mgmt,메타데이터 관리 화면>>의 [컬럼값 관리] 탭을 선택하면 기존 데이터베이스의 Candidates 정보를 조회하거나 관리할 수 있다. Candidates는 특정 컬럼이 가진 값에 대해 중복하지 않은 값의 목록을 말한다.Candidates
+
+왼쪽의 컬럼 트리는 데이터소스, 테이블, 컬럼 순서로 구성된다. 컬럼 트리에서 특정 컬럼을 선택하면 컬럼의 논리명, 물리명과 함께 해당 컬럼이 가지고 있는 Candidates가 조회된다.
+
+트리의 '검색' 항목을 입력하면 트리에서 입력한 값으로 조회된다. 트리에서 컬럼을 선택한 후 [불러오기] 버튼을 클릭하면 데이터베이스로부터 Candidate를 가져올 수 있다. 자세한 내용은 <<sect_meta_column_create, "4.3.3.1. Candidates 생성">>을 참고한다.
+
+컬럼 트리를 선택하면 오른쪽 영역에 해당 트리의 정보를 조회하고 Candidates를 등록, 수정, 삭제할 수 있다.
+ 
+[#figure_candidate_view_content]
+image::resources/figure_candidate_view_content.png[title="컬럼값 관리 화면",width=750]
+
+* 컬럼 정보
++
+컬럼의 논리명과 물리명을 조회한다.
+* 컬럼값 집합
++
+[width="100%",cols="3,7",options="header"]
+|=========
+|항목		|설명
+|컬럼값		|	
+|등록 타입	|
+|=========
+
+////
+ ---------------------
+ section level-3 =====
+ ---------------------
+////
+[#sect_meta_column_create]
+===== Candidates 생성
+
+Candidate 생성은 사용자가 직접 입력하는 방법과 데이터베이스에서 가져오는 방법으로 나뉜다.
+
+* 사용자가 직접 입력하는 방법
++
+<<figure_candidate_view_content,컬럼값 관리 화면>>의 트리에서 컬럼을 선택한 후 [생성] 버튼을 클릭하면 새로운 Candidate를 생성할 수 있다. 후보 컬럼값추가 화면의 '추가 컬럼값' 항목을 입력한 후 [적용]버튼을 클릭하면 Candidate가 생성된다. 추가된 컬럼의 '등록 타입' 항목은 'manual'로 표기된다.
++
+image::resources/figure_candidate_new.png[title="컬럼값 관리 - 후보 컬럼값 추가",width=250]
++
+* 데이터베이스에서 가져오는 방법
++
+<<figure_candidate_view_content,컬럼값 관리 화면>>의 트리에서 컬럼을 선택한 후 [불러오기] 버튼을 클릭하면 데이터베이스로부터 Candidate를 가져올 수 있다. 추가된 컬럼의 '등록 타입'항목은 'import'로 표기된다.
+
+////
+ ---------------------
+ section level-3 =====
+ ---------------------
+////
+[#sect_meta_column_edit]
+===== Candidates 수정
+
+<<figure_candidate_view_content,컬럼값 관리 화면>>의 컬럼값 집합에서 Candidates를 선택한 후 [수정]버튼을 클릭하면 Candidate를 수정할 수 있다. 각 항목을 수정한 후 [적용] 버튼을 클릭한다. '등록 타입'이 'import'인 경우 수정이 불가하다.
+
+image::resources/figure_candidate_edit.png[title="컬럼값 관리 - 후보 컬럼값 수정",width=250]
+
+////
+ ---------------------
+ section level-3 =====
+ ---------------------
+////
+[#sect_meta_column_delete]
+===== Candidates 삭제
+
+<<figure_candidate_view_content,컬럼값 관리 화면>>의 컬럼값 집합에서 Candidates를 선택한 후 [삭제] 버튼을 클릭하면 Candidate를 삭제할 수 있다. 삭제할 목록을 확인한 후 [삭제] 버튼을 클릭한다. '등록 타입'이 'import'인 경우 삭제가 불가하다.
+
+image::resources/figure_candidate_delete.png[title="컬럼값 관리 - 후보 컬럼값 삭제",width=300]
+
+////
+ --------------------- 
+ section level-2 ====
+ ---------------------
+////
+[#sect_meta_dictionary]
+==== 사전 관리 
+
+<<figure_meta_mgmt,메타데이터 관리 화면>>의 [사전] 탭을 선택하면 데이터의 정보를 정의할 사전을 열람할 수 있다.Candidates 왼쪽의 사전 리스트에서 데이터의 사전에 대한 정보를 확인할 수 있다. 사전 리스트에서 특정 사전을 선택하면 테이블의 세부 내용을 조회할 수 있다. 사전 리스트에서 '검색' 항목을 입력하면 리스트에서 입력한 값으로 조회가 된다.
+ 
+[#figure_dictionary_main]
+image::resources/figure_dictionary_main.png[title="사전 기본 화면",width=750]
+
+
+////
+ ---------------------
+ section level-3 =====
+ ---------------------
+////
+[#sect_meta_dictionary_create]
+===== Dictionary 추가
+
+<<figure_dictionary_main, 사전 기본 화면>>의 리스트 위에 있는 [+ 사전] 버튼을 클릭하면 새로운 Dictionary를 생성할 수 있다. 메타 사전 추가 다이얼로그에서 '이름'과 '파일 경로' 항목을 입력한 후 [등록]버튼을 클릭하면 Dictionary 리스트에 정해진 이름의 사전이 추가된다. Dictionary 추가는 xlsx 확장자의 엑셀파일을 업로드하는 방식으로 이루어진다.
+
+image::resources/figure_dictionary_upload.png[title="사전 관리 - 사전 추가",width=300]
+
+////
+ ---------------------
+ section level-3 =====
+ ---------------------
+////
+[#sect_meta_dictionary_delete]
+===== Dictionary 삭제 
+
+<<figure_dictionary_main, 사전 기본 화면>>의 사전 리스트에서 삭제를 원하는 사전을 체크한 후 [삭제] 버튼을 클릭하면 사전을 삭제할 수 있다.
+
+image::resources/figure_dictionary_delete.png[title="사전 관리 - 사전 삭제",width=300]
+
+
+////
+ ---------------------
+ section level-3 =====
+ ---------------------
+////
+[#sect_meta_dictionary_download]
+===== Dictionary 열람 및 다운로드
+
+<<figure_dictionary_main, 사전 기본 화면>>의 사전 리스트에서 원하는 사전을 클릭하면 사전의 세부 내용을 열람할 수 있다. 다운로드를 원할 경우 우측 상단에 있는 [다운로드] 버튼을 클릭해 xlsx 확장자의 파일을 다운로드 받을 수 있다.
+
+image::resources/figure_dictionary_download.png[title="컬럼값 관리 - 후보 컬럼값 다운로드",width=750]

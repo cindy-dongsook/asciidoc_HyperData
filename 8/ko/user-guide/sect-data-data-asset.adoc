@@ -1,0 +1,71 @@
+////
+ ---------------------
+ section level-1 ===
+ --------------------- 
+////
+[#sect_data_data_asset]
+=== Data Asset
+
+[데이터] > [Data Asset] 메뉴를 선택하면 데이터 자산 화면에서 프로젝트 내 등록된 데이터 객체에 대해 검색할 수 있다.
+ 
+image::resources/figure_asset_first.png[title="데이터 자산 초기 화면",width=750]
+
+'검색' 항목에 키워드를 입력하고 <Enter> 키를 누르거나 image:resources/icon_search.png[width=22] 아이콘을 클릭하면 현재 조회 중인 프로젝트에 등록된 데이터 객체에 대한 정보를 검색할 수 있다.
+
+ 
+image::resources/figure_asset_search_example.png[title="데이터 자산 검색 예",width=750]
+
+* 검색 조건
++
+'검색' 항목에 키워드에 매칭되는 정보에는 데이터 객체에 대한 논리명, 물리명, 설명, 태그, 작성자, 소속 카테고리, 소속 데이터소스 위치와 데이터 객체에 포함된 컬럼의 설명, 태그, 개별값이 있다. 검색 후 키워드가 매칭된 검색 결과가 화면에 나타난다. 아무 입력 값이 없이 검색하면 모든 데이터 객체가 조회된다.
+* 검색 결과 영역
++
+검색 결과 영역은 검색 결과 내에서 필터 기능을 수행하는 선택된 항목으로 제한 영역과 날짜기준 영역, 검색결과 영역으로 나뉜다.
++
+** 선택된 항목으로 제한
++
+각 필터 버튼 내에는 해당 기준에 대한 키워드 매칭 개수가 표기된다. 검색되는 기준을 하나 이상 선택할 수 있고 선택된 기준들로 필터링된 결과가 검색 결과에 조회된다.
++ 
+image::resources/figure_asset_filter_1.png[title="데이터 객체 검색 필터",width=700]
+** 날짜기준
++
+생성 날짜와 수정 날짜에 대한 필터 기능을 지원한다. '생성 날짜'와 '수정 날짜'에 각 항목 옆에 해당하는 결과 수만큼 표시되며 항목을 선택하면 해당 기준으로 필터링된 결과가 검색 결과에 조회된다.
++ 
+image::resources/figure_asset_filter_2.png[title="데이터 객체 검색 필터",width=700]
++
+** 검색 결과
++
+검색 결과 위에 검색된 건수를 표시하고 검색 결과는 항목에 각 데이터 객체에 대한 내용을 조회한다.
++
+검색결과 내역에서 체크박스를 체크하면 [데이터잡에 추가] 버튼이 활성화되어 Data Job으로 데이터 객체를 추가할 수 있다. 자세한 내용은 <<sect_datajob_regist, "Data Job에 추가">>를 참고한다.
++ 
+image::resources/figure_asset_result.png[title="데이터 객체 검색 결과",width=700]
++
+검색 결과의 각 데이터 객체의 정보는 다음의 4가지 항목으로 구성된다.
++
+*** {empty}(1) 논리명, 작성자, 수정날짜, 생성날짜
+*** {empty}(2) 물리명, 소속 카테고리, 소속 데이터소스 위치
+*** {empty}(3) 태그
+*** {empty}(4) 설명
++
+검색된 데이터 객체의 image:resources/icon_detail.png[width=22]아이콘을 클릭하면 데이터 객체의 상세 정보를 조회할 수 있다.
++
+[Details], [스키마], [데이터 미리보기] 탭에서 상세 정보를 조회할 수 있다. 각 탭의 자세한 설명은 <<sect_dataobject_detail,"4.2.5. 데이터 객체 상세 조회" >>를 참고한다.
++
+image::resources/figure_asset_details.png[title="데이터 자산 상세 정보 조회",width=700]
+
+
+*Data Job에 추가*
+
+<<figure_asset_result, 데이터 객체 검색 결과>> 영역에 검색결과 내역에서 체크박스를 체크하면 [데이터잡에 추가] 버튼이 활성화된다.
+ 
+image::resources/figure_asset_btn_add_datajob.png[title="데이터 잡에 추가",width=750]
+ 
+데이 터잡에 추가 화면에 데이터 객체를 추가할 Data Job을 'JOB 이름' 항목에서 선택한 후 [확인] 버튼을 클릭한다.
+ 
+image::resources/figure_asset_dlg_add_datajob.png[title="Data Job 선택 페이지",width=380]
+
+데이터 객체를 추가하면 Data Job 화면으로 이동한다. Data Job에 대한 자세한 설명은 <<sect_datajob_detail,"5.2.5. Data Flow 생성 및 수정Data Flow">>을 참고한다.
+
+ 
+image::resources/figure_asset_datajob.png[title="Data Job에 추가된 데이터 객체",width=750]

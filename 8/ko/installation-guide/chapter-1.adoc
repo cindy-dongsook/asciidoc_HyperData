@@ -1,0 +1,109 @@
+== 설치 소개
+
+본 장에서는 Tibero를 간략히 소개하고 설치에 필요한 시스템 요구사항을 설명한다.
+
+=== 개요
+
+현재 기업의 비즈니스는 폭발적인 데이터의 증가와 다양한 환경 및 플랫폼의 등장으로 빠르게 확장되고
+있다. 새로운 비즈니스 환경이 도래함에 따라 보다 더 효율적이고 유연한 데이터 서비스와 정보의 처리,
+데이터 관리 기능이 필요하게 되었다. +
+Tibero는 이러한 변화에 맞춰 기업 비즈니스 구현의 기반이 되는 데이터베이스 인프라 구성을 지원하며
+고성능, 고가용성 및 확장성의 문제를 해결하는 엔터프라이즈 데이터베이스 관리 시스템이다.
+기존 DB의 단점을 보완하기 위해 Tibero 는 독자적인 Tibero Thread Architecture를 채택, 구현하였다. 한
+정된 서버 프로세스의 CPU 및 메모리 등의 시스템 리소스를 효율적으로 사용하면서 뛰어난 성능과 안정
+성 및 확장성을 보장하고 편리한 개발 환경과 관리 기능을 제공한다. +
+Tibero는 초기 설계부터 대규모 사용자, 대용량 데이터, 강화된 안정성, 향상된 호환성 측면 등에서 타
+DBMS와 차별화를 고려하여 개발되었다. +
+Tibero는 대용량의 데이터를 관리하고 안정적으로 비즈니스의 연속성을 보장하는 데이터 관리 솔루션이
+다. Tibero는 이를 위해 RDBMS 환경에서 요구되는 주요 기능 즉, 분산 데이터베이스 링크(Distributed
+Database Link), 데이터 이중화(Data Replication), 데이터베이스 클러스터(Data Cluster), 병렬 질의 처리
+(Parallel Query Processing) 등의 기능을 갖추고 있다. Tibero는 이처럼 기업이 원하는 최적의 데이터베이
+스 환경을 제공하는 대표적인 DB이다.
+
+=== 시스템 사용 환경
+HyperData는 Kubernetes 환경에서 동작한다. +
+다음은 HyperData를 사용하기 위한 Kubernetes 클러스터 구성의 최소 사양 및 Software에 대한 설명이
+다.
+
+[cols="2,5" options=header]
+|===
+|  | 요구 사항
+|Platform | deb / rpm 호환 Linux OS를 실행하는 하나 이상의 시스템 (예: Ubuntu 또는 CentOS)
+|Hardware | 워커 노드를 포함한 모든 노드 2GB 이상 메모리 공간
+|===
+
+=== 설치 전 준비사항
+Kubernetes, Calico, Kubeflow, metallb, Rook-ceph은 사전에 설치가 되어 있어야 한다. HyperData를 설
+치하기 전에 관련된 제품 이미지를 준비하고 커널 파라미터를 설정해야 한다.
+
+
+==== HyperData 이미지 업로드
+다음은 HyperData 이미지를 도커 레지스트리 서버에 이미지를 업로드하는 과정에 대한 설명이다.
+
+1. 이미지가 로컬 도커에 존재하는지 확인한다. HyperData를 설치하기 위해서는 4개의 이미지가 필요하고 사전에 도커 레지스트리 서버에 이미지를
+업로드해놓아야 한다.  
+
+[cols="2,5" options=header]
+|===
+| 구분 | 설명
+|Tibero 이미지 |HyperData의 메타 DB 저장 및 로직을 수행한다.
+|HyperData 이미지 |HyperData 웹 서버 및 로직 수행한다.
+|HyperLoader |이미지 데이터 수집을 한다.
+|Recommen-Module |이미지 AI 추천 모듈이다.
+|=== 
+
+다음의 명령어로 준비된 이미지를 확인한다.
+----
+[root@master ~]# docker images
+----
+
+NOTE: HyperData를 설치하기 위해 필요한 이미지는 TmaxSoft(BI 사업본부 QA 팀)에 요청하여 안내를 받
+도록 한다.
+
+[start=2]
+2. 업로드를 위해 daemon.json 파일에 이미지 서버를 설정한다.
+----
+ ("insecure-registries": ["도커 레지스트리 서버 IP:PORT"])
+----
+
+도커 레지스트리 서버의 정보를 미리 받아야한다. 아래 소스 코드는 예제이므로 시스템 환경에 따라 다
+를 수 있으며, 도커를 디폴트로 설치하는 경우 서버 정보는 /etc/docker/damon.json에서 확인한다.
+
+----
+[root@master ~]# cat /etc/docker/daemon.json
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+        "max-size": "100m"
+   },
+  "iptables": false,
+  "storage-driver": "overlay2",
+  "insecure-registries": [ "192.168.188.106:5000",
+  "192.168.6.110:5000",
+  "192.168.17.131:5000"],
+  "default-runtime": "nvidia",
+  "runtimes": {
+      "nvidia": {
+      "path": "nvidia-container-runtime",
+      "runtimeArgs": []
+    }
+  }
+}
+----
+[start=3]
+3. 도커를 재시작한다.
+
+----
+[root@master ~]# systemctl restart docker
+----
+
+[start=4]
+4. 업로드할 이미지를 도커 레지스트리 서버에 도커를 푸쉬한다.
+
+==== 커널 파라미터 설정
+
+다음은 Tibero를 기동하기 위해서 시스템 커널 파라미터를 설정하는 과정에 대한 설명이다.
+
+1. 10-kubeadm.conf 파일에 kernel.sem 설정한다(소스 코드에 --allowed-unsafe-sysctls=kernel.sem 추가). Kubernetes가 클러스터로 구성되어 있다면 마스터, 워커 노드들에 설정해주어야 한다. +
+2. kubelet를 재기동한다.

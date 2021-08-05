@@ -1,0 +1,38 @@
+////
+ ---------------------
+ chapter == 
+  ---------------------
+////
+[#chapter_analytics]
+== 분석 
+
+
+본 장에서는 분석 카테고리 하위 각 메뉴의 사용법에 대해서 설명한다.
+
+
+////
+ ---------------------
+ section level-1 ===
+  ---------------------
+////
+=== 개요
+
+HyperData Web UI의 분석 카테고리는 데이터를 시각화하여 인사이트를 추출하고 리포트를 작성한다. 제공되는 AI 모델을 활용하여 데이터를 학습하고 학습된 모델을 활용하여 데이터를 분석한다.
+
+다음은 분석 카테고리의 하위 메뉴에 대한 설명이다.
+
+[width="100%",cols="3,7",options="header"]
+|===================================================
+|메뉴 |설명
+|<<sect_analytics_dashboard,Visualization>>	|설명
+|<<sect_analytics_ml_labs,ML Lab>>			|설명
+|<<sect_analytics_ml_auto,AutoML>>			|설명
+|<<sect_analytics_ml_experiment,Experiments>>|설명
+|<<sect_analytics_ml_predefined,Predefined AI>>|설명
+|===================================================
+
+include::sect-analytics-dashborad.adoc[]
+include::sect-analytics-ml-labs.adoc[]
+include::sect-analytics-ml-auto.adoc[]
+include::sect-analytics-ml-experiment.adoc[]
+include::sect-analytics-ml-predefined.adoc[]

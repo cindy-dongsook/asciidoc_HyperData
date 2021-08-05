@@ -1,0 +1,141 @@
+////
+ ---------------------
+ chapter ==
+ ---------------------
+////
+[#chapter_project]
+== 프로젝트 
+
+본 장에서는 HyperData Web UI의 프로젝트 카테고리 메뉴의 사용법에 대해서 설명한다.
+
+////
+ ---------------------
+ section level-1 ===
+ --------------------- 
+////
+[#sect_proj_details]
+=== Project Details 
+
+메인화면의 프로젝트 목록 영역에서 프로젝트를 선택하거나 [프로젝트] > [Project Details] 메뉴를 선택하면 프로젝트 상세 정보와 현재 작업수행 내역을 조회할 수 있다. [수정] 또는 [삭제] 버튼을 클릭하면 프로젝트를 수정하거나 삭제할 수 있다.
+
+image:resources/icon_query.png[width=20] 아이콘을 클릭하면 자연어 쿼리 분석 시스템에서 프로젝트 내에서 자연어를 통해 시각 분석 결과물을 조회할 수 있다. 자세한 내용은 <<sect_natual_language_analysis,"3.1.1. 자연어 쿼리 분석 시스템">>을 참고한다. 
+
+[#figure_project_detail] 
+image::resources/figure_project_detail.png[titile="프로젝트 정보 화면",width=750]
+
+* 기본정보
++
+프로젝트의 이름, 참여자, 날짜, 설명 등의 기본 정보를 조회한다.
+* 최근 작업
++
+프로젝트 내에서 등록된 데이터 및 수행된 Data Job 내역을 요약해서 조회한다. 데이터소스, 데이터 객체를 클릭하면 <<figure_data_datasource, 데이터소스 화면>>으로 이동해서 해당 데이터의 정보를 조회할 수 있다. Data Job을 클릭하면 <<figure_datajob,Data Job 화면>>으로 이동해서 Job의 상세 정보를 조회할 수 있다.
+* 자원
++
+현재 선택된 프로젝트의 각 데이터소스별 데이터 객체의 작업 수행에 대한 결과와 상태를 조회할 수 있다. [underline]##보기##를 클릭하면 <<figure_data_datasource,데이터소스 화면>>과 <<figure_datajob, Data Job 화면>>으로 이동한다.
+
+////
+ ---------------------
+ section level-2 ====
+ ---------------------
+////
+[#sect_natual_language_analysis]
+==== 자연어 쿼리 분석 시스템자연어 쿼리 분석 시스템
+
+<<figure_project_detail,프로젝트 정보 화면>>)의 image:resources/icon_query.png[width=20] 아이콘을 클릭하면 프로젝트 내의 데이터를 자연어로 검색해서 시각 분석 결과물로 구성할 수 있다.
+
+프로젝트의 데이터 객체들의 메타 정보(필드 이름, Column Candidates)을 지정하여 자연어 질의를 할 수 있다. 선택한 메타 정보에 따라서 <<sect_request_template, "질의 템플릿">>을 제공한다. 질의 입력항목에 분석할 질의를 입력한 후 <Enter> 키를 누른다. 해당 기능을 사용하려면 [데이터] > [Meta Management] 메뉴의 컬럼값 관리에서 사용하려는 DO 컬럼 값을 Import해야 한다.
+
+예를 들어 "교통사고" 데이터 객체에 '사고유형' 컬럼과 '부상자수' 컬럼이 있을 때 사용자는 "사고유형별 부상자수 합계를 보여줘"라고 질의할 수 있으며, 이에 따른 결과는 다음과 같다.
+
+[#sect_request_template]
+*질의 템플릿*
+
+다음은 제공되는 템플릿에 대한 설명이다.
+
+* 올해의 고객사별 매출 합계를 바차트로 보여줘요
++
+....
+[element_keyword]의 [dimension_keyword]별 [measure_keyword] [aggregation_keyword]를 [chart_type](차트/그래프)로 보여[ending_keyword]
+....
+* 올해의 고객사별 매출 합계 보여줘요
++
+....
+[element_keyword]의 [dimension_keyword]별 [measure_keyword] [aggregation_keyword] 
+보여[ending_keyword]
+....
+* 올해의 고객사별 매출 보여줘요
++
+....
+[element_keyword]의 [dimension_keyword]별 [measure_keyword] 보여[ending_keyword]
+....
+* 고객사별 매출 합계를 바차트로 보여줘요
++
+....
+[dimension_keyword]별 [measure_keyword] [aggregation_keyword]를 [chart_type]
+(차트/그래프)로 보여[ending_keyword]
+....
+* 고객사별 매출 합계 보여줘요
++
+....
+[dimension_keyword]별 [measure_keyword] [aggregation_keyword] 보여[ending_keyword]
+....
+* 매출 보여줘요
++
+....
+[measure_keyword] 보여[ending_keyword]
+....
+* 월별 제품별 판매량 합계를 바차트로 보여줘요
++
+....
+[dimension_keyword]별 [dimension_keyword]별 [measure_keyword] [aggregation_keyword]를 [chart_type](차트/그래프)로 보여[ending_keyword]
+....
+* 월별 제품별 판매량 합계를 보여줘요
++
+....
+[dimension_keyword]별 [dimension_keyword]별 [measure_keyword] [aggregation_keyword]를 보여[ending_keyword]
+....
+* 제품별 판매량 보여줘요
++
+....
+[dimension_keyword]별 [measure_keyword] 보여[ending_keyword]
+....
+
+각 템플릿에는 aggregation keyword, chart type, ending keyword, element keyword, dimension keyword, measure keyword 키워드가 사용된다. 각 키워드별로 설정된 값으로 템플릿을 구성하면 자연어로 데이터를 분석할 수 있다.
+
+* aggregation keyword, chart type, ending keyword
++
+아래 표와 같이 미리 지정된 값들 중에서 하나를 지정한다.
++
+[cols=",,",options="header"]
+|===============================================
+|aggregation keyword |chart type |ending keyword
+|합 |바 |줘요
+|합계 |라인 |줄래
+|평균 |파이 |주라
+|최댓값(최대값) | |봐
+|최솟값(최소값) | |주세요
+|개수 | |줄래요
+|===============================================
+* element keyword, dimension keyword, measure keyword 
++
+질의하고자 하는 데이터 객체에 따라 달라지게 된다.
++
+dimension keyword, measure keyword는 데이터 객체의 컬럼명이며, element keyword는 데이터 객체 컬럼 Candidates 값 중에서 지정 할 수 있다. 컬럼 Candidates와 관련된 자세한 내용은 <<sect_meta_column, >>를 참고한다.
+
+////
+ ---------------------
+ section level-2 ====
+ --------------------- 
+////
+[#sect_proj_edit]
+=== 프로젝트 수정
+<<figure_project_detail, 프로젝트 정보 화면>>의 [수정] 버튼을 클릭하면 프로젝트 정보를 수정할 수 있다. 자세한 내용은 <<sect_admin_proj_edit,"2.4.2. 프로젝트 수정">>을 참고한다.
+
+////
+ --------------------- 
+ section level-2 ====
+ ---------------------  
+////
+[#sect_proj_delete]
+=== 프로젝트 삭제
+<<figure_project_detail, 프로젝트 정보 화면>>의 [삭제] 버튼을 클릭하면 프로젝트 정보를 삭제할 수 있다. 자세한 내용은 <<sect_admin_proj_delete,"2.4.3. 프로젝트 삭제">>를 참고한다.
