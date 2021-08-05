@@ -8,16 +8,15 @@
 
 Service Job은 등록된 Data Job들을 순차, 병렬, 조건부 수행을 할 수 있도록 Data Job의 실행 그룹을 정의하는 공간이다. Service Job을 생성하고 작성함으로서 그룹 분석/가공 작업을 정의할 수 있고, 작성된 Service Job을 동작함으로서 그룹 분석/가공 작업을 수행한다. Service Job을 정의한 후 스케줄러 등에서 활용할 수 있다.
 
-[JOB] > [Service Job] 메뉴를 선택하면 Service Job을 조회하거나 생성, 수정, 삭제할 수 있다. [생성] 버튼을 클릭하면 Service Job을 생성할 수 있고, 생성 후 초기상태는 Draft로 나타난다. Draft란 작업 수행 전의 Job을 뜻한다. 목록의 '동작' 항목에서 image:resources/icon_edit.png[image,width=20] 아이콘을 클릭하면 Service Job를 수정할 수 있다. 목록에서 Service Job을 선택한 후 [삭제] 버튼을 클릭하거나 '동작' 항목에 image:resources/icon_delete.png[image,width=20] 아이콘을 클릭하면 Service Job을 삭제할 수 있다. '동작' 항목에서 image:resources/icon_export.png[image,width=20] 아이콘을 클릭하면 Service Job을 다른 프로젝트에 공유할 수 있다.
+[JOB] > [Service Job] 메뉴를 선택하면 Service Job을 조회하거나 생성, 수정, 삭제할 수 있다. [생성] 버튼을 클릭하면 Service Job을 생성할 수 있고, 생성 후 초기상태는 Draft로 나타난다. Draft란 작업 수행 전의 Job을 뜻한다. 목록의 '동작' 항목에서 image:resources/icon_edit.png[width=20] 아이콘을 클릭하면 Service Job를 수정할 수 있다. 목록에서 Service Job을 선택한 후 [삭제] 버튼을 클릭하거나 '동작' 항목에 image:resources/icon_delete.png[width=20] 아이콘을 클릭하면 Service Job을 삭제할 수 있다. '동작' 항목에서 image:resources/icon_export.png[width=20] 아이콘을 클릭하면 Service Job을 다른 프로젝트에 공유할 수 있다.
 
-**[스케줄 매니저]**버튼을 클릭하면 Service Job을 실행할 예약 시간 및 주기를 설정할 수 있다. 자세한 사용법은 link:#sect_servicejob_schedule[Service Job 스케줄러 매니저]를 참고한다.
+**[스케줄 매니저]**버튼을 클릭하면 Service Job을 실행할 예약 시간 및 주기를 설정할 수 있다. 자세한 사용법은 <<sect_servicejob_schedule, Service Job 스케줄러 매니저>>를 참고한다.
 
-목록 위에 '검색' 입력항목에 서비스 이름을 입력하고 <Enter> 키를 누르거나 image:resources/icon_search.png[image,width=22] 아이콘을 클릭하면 해당 이름의 서비스를 조회할 수 있다. 목록 아래에 조회된 건수와 페이징 정보, 조회할 건수를 선택할 수 있다.
+목록 위에 '검색' 입력항목에 서비스 이름을 입력하고 <Enter> 키를 누르거나 image:resources/icon_search.png[width=22] 아이콘을 클릭하면 해당 이름의 서비스를 조회할 수 있다. 목록 아래에 조회된 건수와 페이징 정보, 조회할 건수를 선택할 수 있다.
 
-목록에서 Service Job을 선택하면 Service Flow와 Service Job에 대한 내용을 화면 아래 영역에 조회되고, 'JOB 이름' 항목을 클릭하면 Service Flow 생성화면(link:#figure_servicejob_detail[figure_title])으로 이동해서 Flow를 생성하거나 수정할 수 있다. 자세한 내용은 link:#sect_servicejob_detail[Service Flow 생성 및 수정]을 참고한다.
+목록에서 Service Job을 선택하면 Service Flow와 Service Job에 대한 내용을 화면 아래 영역에 조회되고, 'JOB 이름' 항목을 클릭하면 <<figure_servicejob_detail, Service Flow 생성화면>>으로 이동해서 Flow를 생성하거나 수정할 수 있다. 자세한 내용은 <<sect_servicejob_detail,Service Flow 생성 및 수정>>을 참고한다.
 
-.Service Job 화면
-image::resources/figure_servicejob.png[width=750]
+image::resources/figure_servicejob.png[title="Service Job 화면", width=750]
 
 ////
  ---------------------
@@ -40,9 +39,9 @@ image::resources/figure_servicejob_create.png[title="Service Job 생성", width=
 ////
 ==== Service Job 수정
 
-<<figure_servicejob, Service Job 화면>>의 목록에 '동작' 항목에서 image:resources/icon_edit.png[image,width=20] 아이콘을 클릭하면 Service Job를 수정할 수 있다. 각 항목을 수정한 후 [확인] 버튼을 클릭한다. Service Job을 수정하는 경우 프로젝트는 변경할 수 없다.
+<<figure_servicejob, Service Job 화면>>의 목록에 '동작' 항목에서 image:resources/icon_edit.png[width=20] 아이콘을 클릭하면 Service Job를 수정할 수 있다. 각 항목을 수정한 후 [확인] 버튼을 클릭한다. Service Job을 수정하는 경우 프로젝트는 변경할 수 없다.
 
-\
+ 
 image::resources/figure_servicejob_edit.png[title="Service Job 수정", width=450]
 
 
@@ -53,7 +52,7 @@ image::resources/figure_servicejob_edit.png[title="Service Job 수정", width=45
 ////
 ==== Service Job 삭제
 
-<<figure_servicejob, Service Job 화면>>의 목록에서 Service Job을 선택한 후 [삭제] 버튼을 클릭하거나 '동작' 항목에 image:resources/icon_delete.png[image,width=20] 아이콘을 클릭하면 Service Job을 삭제할 수 있다. 목록에서 삭제할 정보를 확인한 후 [삭제] 버튼을 클릭한다.
+<<figure_servicejob, Service Job 화면>>의 목록에서 Service Job을 선택한 후 [삭제] 버튼을 클릭하거나 '동작' 항목에 image:resources/icon_delete.png[width=20] 아이콘을 클릭하면 Service Job을 삭제할 수 있다. 목록에서 삭제할 정보를 확인한 후 [삭제] 버튼을 클릭한다.
 
 
 image::resources/figure_delete_servicejob.png[title="Service Job 삭제", width=300]
@@ -67,7 +66,7 @@ image::resources/figure_delete_servicejob.png[title="Service Job 삭제", width=
 ////
 ==== Service Job 공유
 
-<<figure_servicejob, Service Job 화면>>의 목록에서 Data Job을 선택한 후 '동작' 항목에 image:resources/icon_export.png[image,width=20] 아이콘을 클릭하면 Service Job을 다른 프로젝트에 공유할 수 있다. 프로젝트 목록 위에 '검색' 입력항목에 검색할 프로젝트를 입력하고 image:resources/icon_search.png[image,width=22] 아이콘을 클릭하면 공유할 프로젝트를 조회할 수 있다. 공유할 Job 이름을 입력하고 프로젝트를 선택한 후 [적용] 버튼을 클릭한다.
+<<figure_servicejob, Service Job 화면>>의 목록에서 Data Job을 선택한 후 '동작' 항목에 image:resources/icon_export.png[width=20] 아이콘을 클릭하면 Service Job을 다른 프로젝트에 공유할 수 있다. 프로젝트 목록 위에 '검색' 입력항목에 검색할 프로젝트를 입력하고 image:resources/icon_search.png[width=22] 아이콘을 클릭하면 공유할 프로젝트를 조회할 수 있다. 공유할 Job 이름을 입력하고 프로젝트를 선택한 후 [적용] 버튼을 클릭한다.
 
 
 image::resources/figure_servicejob_export.png[title="Service Job 공유", width=510]
@@ -80,14 +79,13 @@ NOTE: Service Job을 공유하는 경우 포함되어 있는 Data Job과 Data Ob
  ---------------------
 ////
 [#sect_servicejob_detail]
-==== Service Flow 생성 및 수정 [[]]
+==== Service Flow 생성 및 수정 
 
-Service Job 화면(link:#figure_servicejob[figure_title])의 목록에서 'JOB 이름' 항목을 클릭하면 Service Job의 Flow 정보를 조회하거나 생성할 수 있다.
+<<figure_servicejob, Service Job 화면>>의 목록에서 'JOB 이름' 항목을 클릭하면 Service Job의 Flow 정보를 조회하거나 생성할 수 있다.
 
-.[Service Job] - Service Flow 생성화면
-image::resources/figure_servicejob_detail.png[width=750]
+image::resources/figure_servicejob_detail.png[title="Service Flow 생성화면", width=750]
 
-다음은 Service Flow 생성화면의 각 영역에 대한 설명이다. 기본적인 사용법은 Data Job 상세화면(link:#figure_datajob_detail[???])과 동일하므로 자세한 내용은 link:#sect_datajob_detail[???]을 참고한다.
+다음은 Service Flow 생성화면의 각 영역에 대한 설명이다. 기본적인 사용법은 <<figure_datajob_detail, Data Job 상세화면>>과 동일하므로 자세한 내용은 <<sect_datajob_detail, @@>>을 참고한다.
 
 * 작업선택 영역
 +
@@ -102,15 +100,15 @@ image::resources/figure_servicejob_detail.png[width=750]
 [width="100%",cols="3,7",options="header"]
 |=====================================================================================================================
 |버튼															|설명
-|image:resources/icon_undo.png[image,width=16](Undo) / image:resources/icon_redo.png[image,width=16](Redo)|
-|image:resources/icon_save.png[image,width=16](Save)|
-|image:resources/icon_run.png[image,width=22](Run)|
-|image:resources/icon_stop.png[image,width=16](Stop)|
-|image:resources/icon_zoomout.png[image,width=16](Zoom In) / image:resources/icon_zoomin.png[image,width=16](Zoom Out)|
-|image:resources/icon_panmode.png[image,width=16](Pan Mode)|
-|image:resources/icon_fit.png[image,width=16](Fit)|
-|image:resources/icon_acturalsize.png[image,width=20](Actual Size)|
-|image:resources/icon_minimap.png[image,width=16](Mini Map)|
+|image:resources/icon_undo.png[width=16](Undo) / image:resources/icon_redo.png[width=16](Redo)|
+|image:resources/icon_save.png[width=16](Save)|
+|image:resources/icon_run.png[width=22](Run)|
+|image:resources/icon_stop.png[width=16](Stop)|
+|image:resources/icon_zoomout.png[width=16](Zoom In) / image:resources/icon_zoomin.png[width=16](Zoom Out)|
+|image:resources/icon_panmode.png[width=16](Pan Mode)|
+|image:resources/icon_fit.png[width=16](Fit)|
+|image:resources/icon_acturalsize.png[width=20](Actual Size)|
+|image:resources/icon_minimap.png[width=16](Mini Map)|
 |=====================================================================================================================
 
 *Ml Lab Experiment Node*
@@ -158,11 +156,12 @@ image::resources/figure_servicejob_automl_inference.png[title="Service Flow 생�
 +
 '데이터 객체' 항목에 [Select] 버튼을 클릭해서 데이터 객체를 선택한다.
 +
+[#figure_servicejob_automl_inference_dataobject]
 image::resources/figure_servicejob_automl_inference_dataobject.png[title="Service Flow 생성 - AutoML Experiment 노드 - Inference (2)", width=550]
 +
 '모델' 항목에 [Select] 버튼을 클릭해서 추론을 수행할 데이터 소스와 데이터 오브젝트를 선택한다.
 +
-image::resources/figure_servicejob_automl_inference_model.png[title=" Service Flow 생성 - AutoML Experiment 노드 - Inference (3)", width=550]
+image::resources/figure_servicejob_automl_inference_model.png[title="Service Flow 생성 - AutoML Experiment 노드 - Inference (3)", width=550]
 +
 '타겟 데이터 객체' 항목을 '직접 선택'으로 선택한 후 [Select] 버튼을 클릭하면 직접 타겟 데이터 오브젝트를 선택할 수 있다.
 +
@@ -180,7 +179,7 @@ PredefinedAI Experiment 노드는 PredefinedAI에서 생성한 모델에 대한 
 image::resources/figure_servicejob_predefined_training.png[title="Service Flow 생성 - PredefinedAI Experiment 노드 - Training", width=750]
 * Inference
 +
-'Job Type' 항목을 'Inference'로 선택하면 PredefinedAI에서 생성한 모델에 대해 추론을 수행할 수 있다. 노드를 클릭하면 PredefinedAI 실험 정보가 조회된다. Inference Setting에 Inference 시 필요한 설정을 선택하고 Service Flow를 수행한다. Inference Setting에 대한 자세한 방법은 link:#figure_servicejob_automl_inference_dataobject["Inference Setting"]을 참고한다.
+'Job Type' 항목을 'Inference'로 선택하면 PredefinedAI에서 생성한 모델에 대해 추론을 수행할 수 있다. 노드를 클릭하면 PredefinedAI 실험 정보가 조회된다. Inference Setting에 Inference 시 필요한 설정을 선택하고 Service Flow를 수행한다. Inference Setting에 대한 자세한 방법은 <<figure_servicejob_automl_inference_dataobject,"Inference Setting">>을 참고한다.
 +
 image::resources/figure_servicejob_predefined_inference.png[title="Service Flow 생성 - PredefinedAI Experiment 노드 - Inference", width=750]
 
@@ -207,6 +206,7 @@ image::resources/figure_diverging_gateway_connected_job.png[tiele="Service Flow 
 +
 'Select Gateway Type' 항목을 '병렬처리 트리거'로 선택하면 조건에 따라 Data Job이 선택적으로 수행하도록 설정할 수 있다.
 +
+[#figure_diverging_gateway_type_trigger]
 image::resources/figure_diverging_gateway_type_trigger.png[title="Service Flow - 분기 처리", width=450]
 +
 NOTE: Converging Gateway는 해당 게이트웨이와 연결된 모든 Data Job으로부터 응답을 받아야 다음 Data Job을 수행한다. 분기 처리 시 모든 Data Job이 수행되지 않기 때문에, 분기 처리할 때에 Converging Gateway를 사용할 경우 Service Job이 끝까지 수행되지 않고 timeout까지 대기 상태로 빠질 수 있다.
@@ -215,10 +215,9 @@ NOTE: Converging Gateway는 해당 게이트웨이와 연결된 모든 Data Job�
 +
 image::resources/figure_diverging_gateway_trigger.png[title="Service Flow 생성 - 분기 처리 예시", width=650]
 +
-link:#figure_diverging_gateway_type_trigger[figure_title]에서 [+트리거] 버튼을 클릭해서 Data Job의 서비스에 대한 트리거를 설정할 수 있다. 각 항목을 설정한 후 [등록] 버튼을 클릭한다.
+<<figure_diverging_gateway_type_trigger, "Service Flow - 분기 처리">>에서 [+트리거] 버튼을 클릭해서 Data Job의 서비스에 대한 트리거를 설정할 수 있다. 각 항목을 설정한 후 [등록] 버튼을 클릭한다.
 +
-.[Service Job] - Service Flow - 트리거 설정
-image::resources/figure_diverging_gateway_add_trigger.png[width=300]
+image::resources/figure_diverging_gateway_add_trigger.png[title="Service Flow - 트리거 설정", width=300]
 +
 다음은 각 항목에 대한 설명이다.
 +
@@ -251,12 +250,13 @@ image::resources/figure_servicejob_bindparam.png[title="부가 기능 - Service 
  section level-2 ====
  ---------------------
 ////
-==== Service Job 스케줄러 매니저[[sect_servicejob_schedule]]
+[#sect_servicejob_schedule]
+==== Service Job 스케줄러 매니저
 
  
-Service Job 화면(link:#figure_servicejob[figure_title])에서 *[스케줄 매니저]* 버튼을 클릭하면 Service Job을 실행할 예약 시간 및 주기를 설정할 수 있다. [생성] 버튼을 클릭하면 스케줄을 생성할 수 있다. 목록에서 스케줄을 선택한 후 [수정], [삭제] 버튼을 클릭하면 스케줄을 수정하거나 삭제할 수 있다.
+<<figure_servicejob, Service Job 화면>>에서 *[스케줄 매니저]* 버튼을 클릭하면 Service Job을 실행할 예약 시간 및 주기를 설정할 수 있다. [생성] 버튼을 클릭하면 스케줄을 생성할 수 있다. 목록에서 스케줄을 선택한 후 [수정], [삭제] 버튼을 클릭하면 스케줄을 수정하거나 삭제할 수 있다.
 
-목록 위에 '검색' 입력항목에 스케줄 이름을 입력하고 <Enter> 키를 누르거나 image:resources/icon_search.png[image,width=22] 아이콘을 클릭하면 해당 이름의 스케줄을 조회할 수 있다. 목록 아래에 조회된 건수와 페이징 정보, 조회할 건수를 선택할 수 있다. 목록을 선택하면 스케줄의 Service Job Flow가 아래 상세 영역에 조회된다. 목록의 '동작/정지' 항목의 토글 버튼을 선택해서 스케줄을 동작시킬 수 있다.
+목록 위에 '검색' 입력항목에 스케줄 이름을 입력하고 <Enter> 키를 누르거나 image:resources/icon_search.png[width=22] 아이콘을 클릭하면 해당 이름의 스케줄을 조회할 수 있다. 목록 아래에 조회된 건수와 페이징 정보, 조회할 건수를 선택할 수 있다. 목록을 선택하면 스케줄의 Service Job Flow가 아래 상세 영역에 조회된다. 목록의 '동작/정지' 항목의 토글 버튼을 선택해서 스케줄을 동작시킬 수 있다.
 
 [#figure_servicejobschedulemanager]
 image::resources/figure_servicejobschedulemanager.png[title="Service Job 스케줄러 매니저 화면", width=750]
@@ -267,8 +267,6 @@ image::resources/figure_servicejobschedulemanager.png[title="Service Job 스케�
  ---------------------
 ////
 ===== Service Job Schedule 생성
-
-
 <<figure_servicejobschedulemanager, Service Job 스케줄러 매니저 화면>>의 [생성] 버튼을 클릭하면 Service Job 스케줄 정보를 입력할 수 있다. 생성할 스케줄 정보와 유형을 입력하고 [확인] 버튼을 클릭한다.
 
 image::resources/figure_servicejobschedule_create.png[title="Schedule 관리 - Service Job Schedule 생성", width=400]
@@ -279,12 +277,12 @@ image::resources/figure_servicejobschedule_create.png[title="Schedule 관리 - S
 +
 날짜 기준은 실행 날짜와 시간을 직접 설정한다. 여러 날짜와 시간을 설정할 수 있으며 [생성] 버튼을 클릭하면 실행 날짜와 시간을 입력하는 행이 생성되어 날짜와 시간을 입력할 수 있다. 체크 박스 설정 후 [삭제] 버튼을 클릭하면 체크된 행들이 삭제된다.
 +
-image::resources/figure_servicejobschedule_dates_create.png[image,width=400]
+image::resources/figure_servicejobschedule_dates_create.png[width=400]
 * Cron 표현식(Cron Expression)
 +
 Cron Expression은 Cron 표현식을 통해 실행 예약 시간과 주기를 설정한다. Cron 표현식(Cron Expression)의 경우 날짜 기준(Dates)와 달리 From / To 시간 설정을 해야 사용할 수 있다.
 +
-image::resources/figure_servicejobschedule_cron_create.png[image,width=400]
+image::resources/figure_servicejobschedule_cron_create.png[width=400]
 
 ////
  ---------------------
@@ -292,7 +290,6 @@ image::resources/figure_servicejobschedule_cron_create.png[image,width=400]
  ---------------------
 ////
 ===== Service Job Schedule 수정
-
 <<figure_servicejobschedulemanager, Service Job 스케줄러 매니저 화면>> 목록에서 스케줄을 클릭하면 스케줄러 정보를 수정할 수 있다. 항목을 수정한 [확인] 버튼을 클릭한다. 스케줄을 수정하는 경우 '소속 프로젝트'와 'Service Job' 항목은 변경할 수 없다.
 
 image::resources/figure_servicejobschedule_edit.png[title="Schedule 관리 - Service Job Schedule 수정", width=400]
@@ -304,7 +301,6 @@ image::resources/figure_servicejobschedule_edit.png[title="Schedule 관리 - Ser
  ---------------------
 ////
 ===== Service Job Schedule 삭제
-
 <<figure_servicejobschedulemanager, Service Job 스케줄러 매니저 화면>> 목록에서 스케줄을 선택한 후 [삭제] 버튼을 클릭하면 스케줄을 삭제할 수 있다. 목록에서 삭제할 사용자를 확인한 후 [삭제] 버튼을 클릭한다. 삭제된 스케줄 정보는 복구가 불가하다.
 
 
