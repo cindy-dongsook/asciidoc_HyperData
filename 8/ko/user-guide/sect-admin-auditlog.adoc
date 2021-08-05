@@ -7,7 +7,8 @@
 === Audit Log 
 
 [시스템 관리] > [Audit Log] 메뉴를 선택하면 HyperData 내에서 발생한 작업들의 기록을 조회할 수 있다.
- 
+
+[#figure_auditlog_main]
 image::resources/figure_auditlog_main.png[title="Audit Log 화면", width=750]
 
 

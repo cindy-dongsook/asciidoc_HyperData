@@ -12,6 +12,7 @@
 
 목록 위에 '검색' 입력항목에 대시보드 이름을 입력하고 <Enter> 키를 누르거나 image:resources/icon_search.png[title="", width=22] 아이콘을 클릭하면 해당 이름의 대시보드를 검색할 수 있다. 목록 아래에 조회된 건수와 페이징 정보, 조회할 건수를 선택할 수 있다.
 
+[#figure_dashboard]
 image::resources/figure_dashboard.png[title="대시보드 화면", width=750]
 
 ////

@@ -430,6 +430,7 @@ image::resources/figure_after_sqltodo_create.png[title="SQL 객체 생성 후 #S
 
 <<figure_data_datasource, 데이터소스 화면>>의 데이터소스 트리에서 데이터 객체를 선택하면 [Details], [스키마], [데이터미리보기], [Downloads] 탭에서 객체의 정보를 조회할 수 있다.
  
+[#figure_dataobject_detail]
 image::resources/figure_dataobject_detail.png[title="데이터 객체 상세 조회",width=750]
 
 * [Details] 탭
@@ -517,6 +518,7 @@ image::resources/figure_scenario_recommend_start.png[title="데이터 객체 상
 
 [분석결과] 버튼을 클릭하면 추천 분석 시나리오 화면에서 분석 결과를 확인할 수 있다.
 
+[#figure_scenario_recommend_dialog]
 image::resources/figure_scenario_recommend_dialog.png[title="데이터 객체 상세조회 화면 - 분석",width=700]
 
 추천 분석 시나리오 화면에서 왼쪽 시나리오 리스트에서 체크박스를 체크하면 [대시보드로 내보내기] 버튼이 활성화된다. 버튼을 클릭하면 대시보드로 내보내기 화면에서 시나리오 리스트에서 선택한 자료를 확인할 수 있으며 자료를 내보낼 대시보드를 선택하여 내보내기를 수행할 수 있다. 대시보드로 내보낸 시각화 자료는 <<figure_dashboard, 대시보드 화면>>의 목록에서 해당 대시보드를 클릭하면 조회할 수 있다.
